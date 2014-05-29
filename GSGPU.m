@@ -64,6 +64,13 @@ static void _displayReconfigurationCallback(CGDirectDisplayID display, CGDisplay
             
             NSLog(@"Notification: GPU changed. Integrated? %d", isUsingIntegrated);
             
+            // For Macbook Pro 2010 users who have set the mode to Integrated Only,
+            // there will be rogue apps like Chrome that switch the graphics to
+            // Discrete Only upon closing. This will reverse the switch
+            if (!isUsingIntegrated && ([GSMux currentGSSwitcherMode]==GSSwitcherModeForceIntegrated)) {
+                [GSMux setMode:GSSwitcherModeForceIntegrated];
+            }
+            
             GSGPUType activeType = (isUsingIntegrated ? GSGPUTypeIntegrated : GSGPUTypeDiscrete);
             [_delegate GPUDidChangeTo:activeType];
         });
@@ -190,9 +197,9 @@ static void _displayReconfigurationCallback(CGDirectDisplayID display, CGDisplay
     _cached2010MacBookProValue = [gpuNames containsObject:k2010MacBookProDiscreteGPUName];
     
     if (_cached2010MacBookProValue)
-        NSLog(@"Nuke it from orbit switching enabled.");
+        NSLog(@"... Nuke it from orbit switching enabled.");
     else
-        NSLog(@"Nuke it from orbit switching disabled.");
+        NSLog(@"... Nuke it from orbit switching disabled.");
     
     _didCache2010MacBookProValue = YES;
     
