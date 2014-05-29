@@ -6,7 +6,12 @@ of dual GPU MacBook Pros to monitor the status of, and switch between said GPUs.
 
 ## Mod details
 
-This is stripped down command line only version of gfxCardStatus by Cody Krieger
+This is stripped down command line only version of gfxCardStatus by Cody Krieger.
+To build:
+```
+cd /path/to/project/dir
+xcodebuild
+```
 
 ## Usage example: switch GPU during startup:
 
@@ -31,7 +36,6 @@ Create "/Library/LaunchDaemons/com.nullvision.gfxCardStatusCLI.plist" (assuming 
 ```
 Reboot and hope it works.
 
-Xcode project file corrupted and not wokring, sorry.
 
 ## License
 

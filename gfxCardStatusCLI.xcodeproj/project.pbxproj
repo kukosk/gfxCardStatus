@@ -87,8 +87,8 @@
 				CE4F63B8193729B600103555 /* GSGPU.h */,
 				CE4F63B9193729B600103555 /* GSGPU.m */,
 			);
-			path = gfxCardStatusCLI;
-			sourceTree = "<group>";
+			name = gfxCardStatusCLI;
+			sourceTree = SOURCE_ROOT;
 		};
 		CE4F63AC1937297800103555 /* Supporting Files */ = {
 			isa = PBXGroup;
