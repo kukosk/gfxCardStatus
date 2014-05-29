@@ -1,3 +1,34 @@
+## README
+
+This is stripped down command line only version of gfxCardStatus by Cody Krieger
+
+Usage example: switch GPU during startup:
+---
+Create "/Library/LaunchDaemons/com.nullvision.gfxCardStatusCLI.plist" (assuming gfxCardStatusCLI was coppied to '/usr/local/bin/'):
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+        "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Label</key>
+        <string>com.nullvision.noatime</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>/usr/local/bin/gfxCardStatusCLI</string>
+            <string>--integrated</string>
+        </array>
+        <key>RunAtLoad</key>
+        <true/>
+    </dict>
+</plist>
+```
+Reboot and hope it works.
+
+Xcode project file corrupted and not wokring, sorry.
+
+## ORIGINAL README
+
 # gfxCardStatus
 by Cody Krieger
 
