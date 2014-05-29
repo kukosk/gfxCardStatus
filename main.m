@@ -24,9 +24,9 @@ int main(int argc, const char * argv[])
         
         NSArray *args = [[NSProcessInfo processInfo] arguments];
         if ([args indexOfObject:@"--discrete"] != NSNotFound) {
-            NSLog(@": Switching to descrete       : %s", [GSMux setMode:GSSwitcherModeForceDiscrete]    ? "success" : "FAIL");
+            NSLog(@": Switching to descrete  : %s", [GSMux setMode:GSSwitcherModeForceDiscrete] ? "success" : "FAIL");
         } else if ([args indexOfObject:@"--integrated"] != NSNotFound) {
-            NSLog(@": Switching to integrated     : %s", [GSMux setMode:GSSwitcherModeForceIntegrated]  ? "success" : "FAIL");
+            NSLog(@": Switching to integrated: %s", [GSMux setMode:GSSwitcherModeForceIntegrated] ? "success" : "FAIL");
         } else if ([args indexOfObject:@"--dynamic"] != NSNotFound) {
             NSLog(@": Switching to dynomic    status: %s", [GSMux setMode:GSSwitcherModeDynamicSwitching] ? "success" : "FAIL");
         } else if (![GSGPU isLegacyMachine]) {
@@ -34,18 +34,15 @@ int main(int argc, const char * argv[])
             // weird state from the get go.
             [GSMux setMode:GSSwitcherModeDynamicSwitching];
         }
-
-        //NSLog(@": GPUs present                : %@",   [GSGPU getGPUNames]);
-        NSLog(@": Integrated GPU              : %@",   [GSGPU integratedGPUName]);
-        NSLog(@": Discrete GPU                : %@",   [GSGPU discreteGPUName]);
-        NSLog(@": isUsingIntegratedGPU        : %s",   [GSMux isUsingIntegratedGPU]        ? "true" : "false");
-        NSLog(@": isUsingDiscreteGPU          : %s",   [GSMux isUsingDiscreteGPU]          ? "true" : "false");
-        NSLog(@": isUsingDynamicSwitching     : %s",   [GSMux isUsingDynamicSwitching]     ? "true" : "false");
-        NSLog(@": isUsingOldStyleSwitchPolicy : %s",   [GSMux isUsingOldStyleSwitchPolicy] ? "true" : "false");
-        NSLog(@": isOnIntegratedOnlyMode      : %s",   [GSMux isOnIntegratedOnlyMode]      ? "true" : "false");
-        NSLog(@": isOnDiscreteOnlyMode        : %s",   [GSMux isOnDiscreteOnlyMode]        ? "true" : "false");
-
-
+        //switch it not instant
+        sleep(1);
+        NSLog(@": Integrated GPU         : %@%s", [GSGPU integratedGPUName], ([GSMux isUsingIntegratedGPU] ? "\t(in use)" : ""));
+        NSLog(@": Discrete GPU           : %@%s", [GSGPU discreteGPUName]  , ([GSMux isUsingDiscreteGPU]   ? "\t(in use)" : ""));
+        NSLog(@": Switching mode         : %s %s %s %s",
+              ([GSMux isUsingDynamicSwitching]     ? "dynamic"         : ""),
+              ([GSMux isUsingOldStyleSwitchPolicy] ? "logout-required" : ""),
+              ([GSMux isOnIntegratedOnlyMode]      ? "integrated-only" : ""),
+              ([GSMux isOnDiscreteOnlyMode]        ? "discrete-only"   : ""));
         NSLog(@": Done.");
         
     }
