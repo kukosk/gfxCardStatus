@@ -23,7 +23,7 @@ Create "/Library/LaunchDaemons/com.nullvision.gfxCardStatusCLI.plist" (assuming 
 <plist version="1.0">
     <dict>
         <key>Label</key>
-        <string>com.nullvision.noatime</string>
+        <string>com.nullvision.gfxCardStatusCLI</string>
         <key>ProgramArguments</key>
         <array>
             <string>/usr/local/bin/gfxCardStatusCLI</string>
