@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9268548F194DF4DD002C63D9 /* GSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9268548E194DF4DD002C63D9 /* GSAppDelegate.m */; };
 		CE4F63A81937297800103555 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4F63A71937297800103555 /* Foundation.framework */; };
 		CE4F63AB1937297800103555 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4F63AA1937297800103555 /* main.m */; };
 		CE4F63AF1937297800103555 /* gfxCardStatusCLI.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE4F63AE1937297800103555 /* gfxCardStatusCLI.1 */; };
@@ -28,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9268548D194DF4DD002C63D9 /* GSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAppDelegate.h; sourceTree = "<group>"; };
+		9268548E194DF4DD002C63D9 /* GSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAppDelegate.m; sourceTree = "<group>"; };
 		CE4F63A41937297800103555 /* gfxCardStatusCLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = gfxCardStatusCLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4F63A71937297800103555 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CE4F63AA1937297800103555 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -80,12 +83,14 @@
 			isa = PBXGroup;
 			children = (
 				CE4F63AA1937297800103555 /* main.m */,
-				CE4F63AE1937297800103555 /* gfxCardStatusCLI.1 */,
-				CE4F63AC1937297800103555 /* Supporting Files */,
+				9268548D194DF4DD002C63D9 /* GSAppDelegate.h */,
+				9268548E194DF4DD002C63D9 /* GSAppDelegate.m */,
 				CE4F63B51937299C00103555 /* GSMux.h */,
 				CE4F63B61937299C00103555 /* GSMux.m */,
 				CE4F63B8193729B600103555 /* GSGPU.h */,
 				CE4F63B9193729B600103555 /* GSGPU.m */,
+				CE4F63AE1937297800103555 /* gfxCardStatusCLI.1 */,
+				CE4F63AC1937297800103555 /* Supporting Files */,
 			);
 			name = gfxCardStatusCLI;
 			sourceTree = SOURCE_ROOT;
@@ -152,6 +157,7 @@
 				CE4F63BA193729B600103555 /* GSGPU.m in Sources */,
 				CE4F63B71937299C00103555 /* GSMux.m in Sources */,
 				CE4F63AB1937297800103555 /* main.m in Sources */,
+				9268548F194DF4DD002C63D9 /* GSAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,7 +29,7 @@ Create "/Library/LaunchDaemons/com.nullvision.gfxCardStatusCLI.plist" (assuming 
             <string>/usr/local/bin/gfxCardStatusCLI</string>
             <string>--integrated</string>
         </array>
-        <key>RunAtLoad</key>
+        <key>KeepAlive</key>
         <true/>
     </dict>
 </plist>
