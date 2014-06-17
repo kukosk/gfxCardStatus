@@ -13,9 +13,9 @@ cd /path/to/project/dir
 xcodebuild
 ```
 
-## Usage example: switch GPU during startup:
+## Usage example: switch GPU immediately after login:
 
-Create "/Library/LaunchDaemons/com.nullvision.gfxCardStatusCLI.plist" (assuming gfxCardStatusCLI was coppied to '/usr/local/bin/'):
+Create "/Library/LaunchAgents/com.nullvision.gfxCardStatusCLI.plist" (assuming gfxCardStatusCLI was coppied to '/usr/local/bin/'):
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
@@ -29,12 +29,14 @@ Create "/Library/LaunchDaemons/com.nullvision.gfxCardStatusCLI.plist" (assuming 
             <string>/usr/local/bin/gfxCardStatusCLI</string>
             <string>--integrated</string>
         </array>
+		<key>RunAtLoad</key>
+		<true/>
         <key>KeepAlive</key>
         <true/>
     </dict>
 </plist>
 ```
-Reboot and hope it works.
+Reboot. You can search for 'gfx' in Console.app to see if it works ;)
 
 
 ## License
